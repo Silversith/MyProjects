@@ -1,0 +1,12 @@
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\bin\Debug\GoogleImageSearch.exe.config
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.vbprojResolveAssemblyReference.cache
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.vbproj.ResolveComReference.cache
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.Resources.resources
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.vbproj.GenerateResource.Cache
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.xml
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\bin\Debug\GoogleImageSearch.exe
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\bin\Debug\GoogleImageSearch.pdb
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\bin\Debug\GoogleImageSearch.xml
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.exe
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.pdb
+C:\Tertius-Practice\GoogleImageSearch\GoogleImageSearch\obj\Debug\GoogleImageSearch.Main.resources
