@@ -5,6 +5,9 @@
     <Setting Name="WorkSheetName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Sheet1</Value>
     </Setting>
+    <Setting Name="LastSite" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="LastFile" Type="System.String" Scope="User">
       <Value Profile="(Default)">
                 </Value>
@@ -12,9 +15,6 @@
     <Setting Name="LastFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">
                 </Value>
-    </Setting>
-    <Setting Name="LastSite" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

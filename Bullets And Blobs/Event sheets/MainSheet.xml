@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MainSheet</name>
+    <events>
+        <variable constant="0" name="Crashed" sid="782202400709625" static="0" type="number">0</variable>
+        <event-block sid="840686870364886">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="2850454879249967" type="CrashedShip">
+                    <param id="0" name="Object">Planet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="5315527351290744" type="System">
+                    <param id="0" name="Object to create">Explosion</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">CrashedShip.X</param>
+                    <param id="3" name="Y">CrashedShip.Y</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1298873080490687" type="CrashedShip" />
+            </actions>
+        </event-block>
+        <event-block sid="280674087372951">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="9720075766969712" type="System">
+                    <param id="0" name="Interval (seconds)">0.01</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="6935678715683066" type="System">
+                    <param id="0" name="Variable">Crashed</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-5" name="Compare width" sid="6670368197170972" type="Planet">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Width">2000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-7" name="Set size" sid="2127187305747486" type="Planet">
+                    <param id="0" name="Width">Planet.Width + 10</param>
+                    <param id="1" name="Height">Planet.Height + 10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2810413711399782">
+            <conditions>
+                <condition id="4" name="On finished" sid="6326162658568474" type="Explosion">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                </condition>
+                <condition id="-33" name="Pick by comparison" sid="5269450686018058" type="System">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Expression">Explosion.UID</param>
+                    <param id="2" name="Comparison">1</param>
+                    <param id="3" name="Value">58</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2138643760589946" type="System">
+                    <param id="0" name="Variable">Crashed</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="2841778318396762" type="Explosion" />
+            </actions>
+        </event-block>
+        <event-block sid="6078024955796057">
+            <conditions>
+                <condition id="-5" name="Compare width" sid="8101485122150521" type="Planet">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Width">2000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="6366190081128313" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="5555500163032722" type="Text4">
+                    <param id="0" name="Speed">150</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8851198130534332" type="Text4">
+                    <param id="0" name="Angle">-90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7007151134036054">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="1625148618359245" type="System">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Expression">Explosion.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">58</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="6382011959401559" type="Explosion" />
+                <action id="4" name="Set animation" sid="929694341245242" type="Explosion">
+                    <param id="0" name="Animation">&quot;ExplosionKill&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="2163462513011089" type="Explosion">
+                    <param id="0" name="Frame number">17</param>
+                </action>
+                <action id="6" name="Set speed" sid="1239508933839821" type="Explosion">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6296328556507689">
+            <conditions>
+                <condition id="-33" name="Pick by comparison" sid="510406308509052" type="System">
+                    <param id="0" name="Object">Explosion</param>
+                    <param id="1" name="Expression">Explosion.UID</param>
+                    <param id="2" name="Comparison">0</param>
+                    <param id="3" name="Value">81</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="2" name="Stop" sid="162516518531767" type="Explosion" />
+                <action id="5" name="Set frame" sid="5812795766946495" type="Explosion">
+                    <param id="0" name="Frame number">10</param>
+                </action>
+                <action id="6" name="Set speed" sid="8694195508462952" type="Explosion">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="140073360203303">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="9926038847857208" type="Text4">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Distance">1000</param>
+                </condition>
+                <condition id="0" name="Compare text" sid="346884379791569" type="Text4">
+                    <param id="0" name="Text to compare">&quot;I don&apos;t know how long I can last...&quot;</param>
+                    <param id="1" name="Case sensitivity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="9403252075694317" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4208697678798769">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="2005525432945672" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ClickToStart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="6221373921338874" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

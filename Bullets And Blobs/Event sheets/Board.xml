@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Board</name>
+    <events>
+        <variable constant="0" name="NumberOfLines" sid="63972354987068" static="0" type="number">1</variable>
+        <event-block sid="1303420713140391">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="2260661577441853" type="System" />
+            </conditions>
+            <actions>
+                <action id="1" name="Request project file" sid="2987707510107618" type="AJAX">
+                    <param id="0" name="Tag">&quot;LeaderBoard&quot;</param>
+                    <param id="1" name="File">Leaderboard.xml</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="8243097912733687" type="TextBox">
+                    <param id="0" name="Property name">&quot;font-size&quot;</param>
+                    <param id="1" name="Value">&quot;18pt&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="1729573219485145" type="TextBox">
+                    <param id="0" name="Property name">&quot;text-aling&quot;</param>
+                    <param id="1" name="Value">&quot;center&quot;</param>
+                </action>
+                <action id="0" name="Import CSS file" sid="325736226128314" type="CSSImport">
+                    <param id="0" name="CSS import">&quot;style.css&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1538806638446509">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="9347766935472253" type="System">
+                            <param id="0" name="Object">Text6</param>
+                            <param id="1" name="Expression">Text6.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">94</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4648947923228098" type="Text6">
+                            <param id="0" name="Text">&quot;Your time: &quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="738723980877519">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                        <event-block sid="3089480833599432">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5484764158570826" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="3989561204914971" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1473152718303734" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="8502941392438807" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="8471722211435659" type="Text6">
+                                    <param id="0" name="Text">&quot;Your time is: 0&quot; &amp; Minutes &amp; &quot;:&quot; &amp; &quot;0&quot; &amp; Seconds</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4033617636172852">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3701467581052022" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="8044584530078923" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="5787527727334842" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="1624840121766733" type="Text6">
+                                    <param id="0" name="Text">&quot;Your time is: &quot; &amp; Minutes &amp; &quot;:&quot; &amp; &quot;0&quot; &amp; Seconds</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="214305870770368">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="4524173312420304" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1735892749576472" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="5896548325663696" type="Text6">
+                                    <param id="0" name="Text">&quot;Your time is: &quot; &amp; Minutes &amp; &quot;:&quot; &amp; Seconds</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6930715390221686">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2532469585741668" type="System">
+                                    <param id="0" name="Variable">Seconds</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="1567398509497841" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="7571447521451621" type="System">
+                                    <param id="0" name="Variable">Minutes</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="784610071203666" type="Text6">
+                                    <param id="0" name="Text">&quot;Your time is: 0&quot; &amp; Minutes &amp; &quot;:&quot; &amp; Seconds</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7312570561147553">
+                    <conditions>
+                        <condition id="-33" name="Pick by comparison" sid="9791666021811535" type="System">
+                            <param id="0" name="Object">Text6</param>
+                            <param id="1" name="Expression">Text6.UID</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">95</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4180621312788643" type="Text6">
+                            <param id="0" name="Text">&quot;Your level is: &quot; &amp; str(Level)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9805287717362429">
+            <conditions>
+                <condition id="0" name="On completed" sid="7541123987938219" type="AJAX">
+                    <param id="0" name="Tag">&quot;LeaderBoard&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Load" sid="9223838967191352" type="XML">
+                    <param id="0" name="XML">AJAX.LastData</param>
+                </action>
+            </actions>
+            <sub-events>
+                <variable constant="0" name="ArrayIndex" sid="8228183804769252" static="0" type="number">0</variable>
+                <event-block sid="4940304741428654">
+                    <conditions>
+                        <condition id="0" name="For each node" sid="1142767805662352" type="XML">
+                            <param id="0" name="XPath">&quot;leader&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="5374098906638269" type="Array">
+                            <param id="0" name="X">ArrayIndex</param>
+                            <param id="1" name="Y">0</param>
+                            <param id="2" name="Value">XML.StringValue(&quot;@time&quot;)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="2376407221663526" type="Array">
+                            <param id="0" name="X">ArrayIndex</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Value">xml.StringValue(&quot;node()&quot;)</param>
+                        </action>
+                        <action id="3" name="Set at XY" sid="1433567378924953" type="Array">
+                            <param id="0" name="X">ArrayIndex</param>
+                            <param id="1" name="Y">2</param>
+                            <param id="2" name="Value">XML.StringValue(&quot;@level&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="2249097679686085" type="System">
+                            <param id="0" name="Variable">ArrayIndex</param>
+                            <param id="1" name="Value">ArrayIndex + 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5539957080421992">
+                    <conditions />
+                    <actions>
+                        <action id="8" name="Sort" sid="1582164134213068" type="Array">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                        <action id="7" name="Reverse" sid="9788407424230505" type="Array">
+                            <param id="0" name="Axis">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2301817550603368">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="2861888755474056" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                        <condition id="1" name="Compare at XY" sid="6294973284697588" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">1</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="8514412772317952" type="System">
+                            <param id="0" name="Object">Text6</param>
+                            <param id="1" name="Expression">text6.uid</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">86</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="6344864559157962" type="Text6">
+                            <param id="0" name="Text">Array.CurX + 1 &amp; &quot;.) &quot; &amp; Array.At(Array.CurX, 1) &amp; newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4051521658221854">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="1477117755622077" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                        <condition id="1" name="Compare at XY" sid="7705354457151748" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">1</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="2491240562382427" type="System">
+                            <param id="0" name="Object">Text6</param>
+                            <param id="1" name="Expression">text6.uid</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">88</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="1413163306589038" type="Text6">
+                            <param id="0" name="Text">Array.At(Array.CurX, 0) &amp; newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1136103807045599">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="9742119761802575" type="Array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                        <condition id="1" name="Compare at XY" sid="7583797148629584" type="Array">
+                            <param id="0" name="X">Array.CurX</param>
+                            <param id="1" name="Y">1</param>
+                            <param id="2" name="Comparison">1</param>
+                            <param id="3" name="Value">0</param>
+                        </condition>
+                        <condition id="-33" name="Pick by comparison" sid="5311995432109637" type="System">
+                            <param id="0" name="Object">Text6</param>
+                            <param id="1" name="Expression">text6.uid</param>
+                            <param id="2" name="Comparison">0</param>
+                            <param id="3" name="Value">89</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="8624565220940953" type="Text6">
+                            <param id="0" name="Text">Array.At(Array.CurX, 2) &amp; newline</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5474743151879883">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6673589607388191" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-19" name="Rotate counter-clockwise" sid="4913336419990198" type="TiledBackground3">
+                    <param id="0" name="Degrees">0.1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8795108081365392">
+            <conditions>
+                <condition id="0" name="On clicked" sid="7939282848058254" type="Button" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

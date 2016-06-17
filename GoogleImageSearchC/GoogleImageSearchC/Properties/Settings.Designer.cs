@@ -38,6 +38,18 @@ namespace GoogleImageSearchC.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastSite {
+            get {
+                return ((string)(this["LastSite"]));
+            }
+            set {
+                this["LastSite"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LastFile {
             get {
                 return ((string)(this["LastFile"]));
@@ -56,18 +68,6 @@ namespace GoogleImageSearchC.Properties {
             }
             set {
                 this["LastFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string LastSite {
-            get {
-                return ((string)(this["LastSite"]));
-            }
-            set {
-                this["LastSite"] = value;
             }
         }
     }

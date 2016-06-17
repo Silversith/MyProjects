@@ -8,3 +8,12 @@ C:\Tertius-Practice\GoogleImageSearchC\GoogleImageSearchC\bin\Debug\GoogleImageS
 C:\Tertius-Practice\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.exe
 C:\Tertius-Practice\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.pdb
 C:\Tertius-Practice\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.Download.resources
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\bin\Debug\GoogleImageSearchC.exe.config
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.csproj.ResolveComReference.cache
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.exe
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.pdb
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\bin\Debug\GoogleImageSearchC.exe
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.Download.resources
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.Properties.Resources.resources
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.csproj.GenerateResource.Cache
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\bin\Debug\GoogleImageSearchC.pdb
