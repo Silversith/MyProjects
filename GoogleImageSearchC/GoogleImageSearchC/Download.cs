@@ -49,7 +49,7 @@ namespace GoogleImageSearchC
                         AvailableImages.Add(varItem.Substring(0, varItem.IndexOf("\"")));
                         if (AvailableImages.Count >= TotalImagesToDownload.Value)
                         {
-                            break; // TODO: might not be correct. Was : Exit For
+                            break;
                         }
                     }
                 }
@@ -119,7 +119,7 @@ namespace GoogleImageSearchC
 
                 xlWorkBook = xlApp.Workbooks.Open(ExcelPath);
                 xlWorkSheet = xlWorkBook.Worksheets[Properties.Settings.Default.WorkSheetName];
-                //display the cells value B2
+
                 int MaxXValue = 0;
                 int MaxYValue = 0;
                 for (int x = 1; x <= 200; x++)
@@ -127,7 +127,7 @@ namespace GoogleImageSearchC
                     if (string.IsNullOrEmpty(xlWorkSheet.Cells[x, 1].value))
                     {
                         MaxXValue = x;
-                        break; // TODO: might not be correct. Was : Exit For
+                        break; 
                     }
                 }
                 for (int y = 1; y <= 200; y++)
@@ -135,7 +135,7 @@ namespace GoogleImageSearchC
                     if (string.IsNullOrEmpty(xlWorkSheet.Cells[1, y].value))
                     {
                         MaxYValue = y;
-                        break; // TODO: might not be correct. Was : Exit For
+                        break; 
                     }
                 }
 
@@ -149,7 +149,7 @@ namespace GoogleImageSearchC
                         }
                         else
                         {
-                            break; // TODO: might not be correct. Was : Exit For
+                            break; 
                         }
                     }
                 }
