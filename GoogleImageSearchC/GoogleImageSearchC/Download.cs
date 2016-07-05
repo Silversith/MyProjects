@@ -91,14 +91,19 @@ namespace GoogleImageSearchC
                 using (TextReader reader = File.OpenText(@ExcelPath))
                 {
                     string text = reader.ReadToEnd();
-                    if (text.Contains("\n")) {
-                        foreach (string textItem in text.Split(new[] { "\r\n" }, StringSplitOptions.None)){
-                            if (textItem.TrimEnd() != "") { 
+                    if (text.Contains("\n"))
+                    {
+                        foreach (string textItem in text.Split(new[] { "\r\n" }, StringSplitOptions.None))
+                        {
+                            if (textItem.TrimEnd() != "")
+                            {
                                 SearchList.Add(textItem.Replace("\"", "").TrimEnd());
                             }
                         }
                     }
-                   
+                    else {
+                        SearchList.Add(text.Replace("\"", "").TrimEnd());
+                    }
                 }
                 TermsProgress.Maximum = SearchList.Count;
                 CurrentSearchTerm = (String)SearchList[0];
