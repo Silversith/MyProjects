@@ -67,9 +67,9 @@ namespace GoogleImageSearchC
             this.Label1.AutoSize = true;
             this.Label1.Location = new System.Drawing.Point(10, 7);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(52, 13);
+            this.Label1.Size = new System.Drawing.Size(78, 13);
             this.Label1.TabIndex = 34;
-            this.Label1.Text = "Excel File";
+            this.Label1.Text = "Excel/Text File";
             // 
             // TermsProgress
             // 

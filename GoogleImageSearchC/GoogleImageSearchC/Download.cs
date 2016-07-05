@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
@@ -85,62 +86,85 @@ namespace GoogleImageSearchC
         private void btnStart_Click(object sender, EventArgs e)
         {
             string ExcelPath = FilePath.Text;
-
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook = default(Microsoft.Office.Interop.Excel.Workbook);
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet = default(Microsoft.Office.Interop.Excel.Worksheet);
-
-            xlWorkBook = xlApp.Workbooks.Open(ExcelPath);
-            xlWorkSheet = xlWorkBook.Worksheets[Properties.Settings.Default.WorkSheetName];
-            //display the cells value B2
-            int MaxXValue = 0;
-            int MaxYValue = 0;
-            for (int x = 1; x <= 200; x++)
+            if (ExcelPath.Contains(".txt"))
             {
-                if (string.IsNullOrEmpty(xlWorkSheet.Cells[x, 1].value))
+                using (TextReader reader = File.OpenText(@ExcelPath))
                 {
-                    MaxXValue = x;
-                    break; // TODO: might not be correct. Was : Exit For
-                }
-            }
-            for (int y = 1; y <= 200; y++)
-            {
-                if (string.IsNullOrEmpty(xlWorkSheet.Cells[1, y].value))
-                {
-                    MaxYValue = y;
-                    break; // TODO: might not be correct. Was : Exit For
-                }
-            }
-
-            for (int x = 1; x <= MaxXValue; x++)
-            {
-                for (int y = 1; y <= MaxYValue; y++)
-                {
-                    if (!string.IsNullOrEmpty(xlWorkSheet.Cells[x, y].value))
-                    {
-                        SearchList.Add(xlWorkSheet.Cells[x, y].value);
+                    string text = reader.ReadToEnd();
+                    if (text.Contains("\n")) {
+                        foreach (string textItem in text.Split(new[] { "\r\n" }, StringSplitOptions.None)){
+                            if (textItem.TrimEnd() != "") { 
+                                SearchList.Add(textItem.Replace("\"", "").TrimEnd());
+                            }
+                        }
                     }
-                    else
+                   
+                }
+                TermsProgress.Maximum = SearchList.Count;
+                CurrentSearchTerm = (String)SearchList[0];
+                CurrentTermLabel.Text = CurrentSearchTerm;
+                Browser.Name = CurrentSearchTerm;
+                Browser.Navigate("https://www.google.com/search?q=" + CurrentSearchTerm.Replace(" ", "+") + FocusOnWebsite + "&tbm=isch" + ImageSizes[(string)SizeDropdown.Text]);
+            }
+            else
+            {
+                Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook xlWorkBook = default(Microsoft.Office.Interop.Excel.Workbook);
+                Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet = default(Microsoft.Office.Interop.Excel.Worksheet);
+
+                xlWorkBook = xlApp.Workbooks.Open(ExcelPath);
+                xlWorkSheet = xlWorkBook.Worksheets[Properties.Settings.Default.WorkSheetName];
+                //display the cells value B2
+                int MaxXValue = 0;
+                int MaxYValue = 0;
+                for (int x = 1; x <= 200; x++)
+                {
+                    if (string.IsNullOrEmpty(xlWorkSheet.Cells[x, 1].value))
                     {
+                        MaxXValue = x;
                         break; // TODO: might not be correct. Was : Exit For
                     }
                 }
-            }
-            if (txtSiteExtra.Text != "") { 
-                FocusOnWebsite = "+site:" + txtSiteExtra.Text;
-            }
-            TermsProgress.Maximum = SearchList.Count;
-            CurrentSearchTerm = (String)SearchList[0];
-            CurrentTermLabel.Text = CurrentSearchTerm;
-            Browser.Name = CurrentSearchTerm;
-            Browser.Navigate("https://www.google.com/search?q=" + CurrentSearchTerm.Replace(" ", "+") + FocusOnWebsite + "&tbm=isch" + ImageSizes[(string)SizeDropdown.Text]);
+                for (int y = 1; y <= 200; y++)
+                {
+                    if (string.IsNullOrEmpty(xlWorkSheet.Cells[1, y].value))
+                    {
+                        MaxYValue = y;
+                        break; // TODO: might not be correct. Was : Exit For
+                    }
+                }
 
-            xlWorkBook.Close();
-            xlApp.Quit();
+                for (int x = 1; x <= MaxXValue; x++)
+                {
+                    for (int y = 1; y <= MaxYValue; y++)
+                    {
+                        if (!string.IsNullOrEmpty(xlWorkSheet.Cells[x, y].value))
+                        {
+                            SearchList.Add(xlWorkSheet.Cells[x, y].value);
+                        }
+                        else
+                        {
+                            break; // TODO: might not be correct. Was : Exit For
+                        }
+                    }
+                }
+                if (txtSiteExtra.Text != "")
+                {
+                    FocusOnWebsite = "+site:" + txtSiteExtra.Text;
+                }
+                TermsProgress.Maximum = SearchList.Count;
+                CurrentSearchTerm = (String)SearchList[0];
+                CurrentTermLabel.Text = CurrentSearchTerm;
+                Browser.Name = CurrentSearchTerm;
+                Browser.Navigate("https://www.google.com/search?q=" + CurrentSearchTerm.Replace(" ", "+") + FocusOnWebsite + "&tbm=isch" + ImageSizes[(string)SizeDropdown.Text]);
 
-            releaseObject(xlApp);
-            releaseObject(xlWorkBook);
-            releaseObject(xlWorkSheet);
+                xlWorkBook.Close();
+                xlApp.Quit();
+
+                releaseObject(xlApp);
+                releaseObject(xlWorkBook);
+                releaseObject(xlWorkSheet);
+            }
         }
         private void DownloadFile()
         {
@@ -204,7 +228,8 @@ namespace GoogleImageSearchC
                             Rename = (int.Parse(Rename) + 1).ToString();
                         }
                     }
-                    if (Rename != "") {
+                    if (Rename != "")
+                    {
                         FileName = FileName + "_";
                     }
                     WebClientDownload.DownloadFile(varFile, FileStorePath + FileName + FileExtention);
