@@ -17,3 +17,4 @@ C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImag
 C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.Properties.Resources.resources
 C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.csproj.GenerateResource.Cache
 C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\bin\Debug\GoogleImageSearchC.pdb
+C:\working\MyProjects\GoogleImageSearchC\GoogleImageSearchC\obj\Debug\GoogleImageSearchC.csprojResolveAssemblyReference.cache

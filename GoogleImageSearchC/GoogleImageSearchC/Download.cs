@@ -235,7 +235,7 @@ namespace GoogleImageSearchC
                     }
                     if (Rename != "")
                     {
-                        FileName = FileName + "_";
+                        FileName = FileName + "_" + Rename.ToString();
                     }
                     WebClientDownload.DownloadFile(varFile, FileStorePath + FileName + FileExtention);
                 }
@@ -367,7 +367,6 @@ namespace GoogleImageSearchC
 
             return InputFileName.Replace("+", " ").Replace("/", "").Replace("%20", " ");
         }
-
         private void txtSiteExtra_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.LastSite = txtSiteExtra.Text;
