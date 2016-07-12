@@ -335,35 +335,7 @@ namespace GoogleImageSearchC
         }
         private string GetFileNameFromURL(string InputFileName)
         {
-            InputFileName = InputFileName.Substring(InputFileName.LastIndexOf("/"), InputFileName.Length - InputFileName.LastIndexOf("/"));
-            if ((InputFileName.Contains("?")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf("?")));
-            }
-            if ((InputFileName.Contains(".jpg")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".jpg") - 4));
-            }
-            if ((InputFileName.Contains(".jpeg")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".jpeg") - 5));
-            }
-            if ((InputFileName.Contains(".png")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".png") - 4));
-            }
-            if ((InputFileName.Contains(".ico")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".ico") - 4));
-            }
-            if ((InputFileName.Contains(".gif")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".gif") - 4));
-            }
-            if ((InputFileName.Contains(".bmp")))
-            {
-                InputFileName = InputFileName.Substring(0, InputFileName.Length - (InputFileName.Length - InputFileName.IndexOf(".bmp") - 4));
-            }
+            InputFileName = Path.GetFileName(InputFileName);
 
             return InputFileName.Replace("+", " ").Replace("/", "").Replace("%20", " ");
         }
